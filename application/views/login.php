@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="<?= base_url('') ?>assets/css/argon.css?v=1.2.0" type="text/css">
 </head>
 
-<body class="">
+<body class="bg-default">
   <!-- Main content -->
   <div class="main-content">
     <!-- Header -->
@@ -55,6 +55,7 @@
           <div class="card bg-secondary border-0 mb-0">
             <div class="card-body px-lg-5 py-lg-5">
               <form role="form" action="<?= site_url('auth/login') ?>" method="post">
+                <h5 class="text-danger text-center"> <b><?= $this->session->flashdata('msg'); ?></b> </h5>
                 <div class="form-group mb-3">
                   <div class="input-group input-group-merge input-group-alternative">
                     <div class="input-group-prepend">
