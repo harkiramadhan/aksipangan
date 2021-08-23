@@ -1,0 +1,401 @@
+<!--
+=========================================================
+* Argon Dashboard - v1.2.0
+=========================================================
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+
+
+* Copyright  Creative Tim (http://www.creative-tim.com)
+* Coded by www.creative-tim.com
+
+
+
+=========================================================
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+  <meta name="author" content="Creative Tim">
+  <title>Beranda - Admin aksipangan.com</title>
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/brand/logo100.svg" type="image/png">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <!-- Icons -->
+  <link rel="stylesheet" href="assets/vendor/nucleo/css/nucleo.css" type="text/css">
+  <link rel="stylesheet" href="assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <!-- Page plugins -->
+  <!-- Argon CSS -->
+  <link rel="stylesheet" href="assets/css/argon.css?v=1.2.0" type="text/css">
+</head>
+
+<body>
+  <!-- Sidenav -->
+  <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+    <div class="scrollbar-inner">
+      <!-- Brand -->
+      <div class="sidenav-header  align-items-center">
+        <a class="navbar-brand" href="javascript:void(0)">
+          <img src="assets/img/brand/logo-primary.png" class="navbar-brand-img" alt="...">
+          <br>
+          <span class="h6 text-left text-muted" style="position:absolute;right: 25px;top: 52px;">ADMIN DASHBOARDS</span>
+        </a>
+      </div>
+      <div class="navbar-inner">
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+          <!-- Nav items -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link " href="dashboard.html">
+                <i class="fas fa-home text-primary"></i>
+                <span class="nav-link-text">Beranda</span>
+              </a>
+              <a class="nav-link active" href="donasi.html">
+                <i class="fas fa-wallet pt-1 text-primary"></i>
+                <span class="nav-link-text">Donasi</span>
+              </a>
+              <a class="nav-link" href="examples/dashboard.html">
+                <i class="fas fa-hands-helping text-primary"></i>
+                <span class="nav-link-text">Aksi</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Main content -->
+  <div class="main-content" id="panel">
+    <div class="alert alert-success alert-dismissible fade show mb-0 position-relative fixed-top rounded-0" role="alert">
+      <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <!-- Topnav -->
+    <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+          <!-- Navbar links -->
+          <ul class="navbar-nav flex-2 align-items-center ml-auto">
+            <li class="nav-item d-xl-none">
+              <!-- Sidenav toggler -->
+              <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin"
+                data-target="#sidenav-main">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown mr-auto">
+              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <i class="ni ni-bell-55"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
+                <!-- Dropdown header -->
+                <div class="px-3 py-3">
+                  <h6 class="text-sm text-muted m-0">You have <strong class="text-primary">13</strong> notifications.
+                  </h6>
+                </div>
+                <!-- List group -->
+                <div class="list-group list-group-flush">
+                  <a href="#!" class="list-group-item list-group-item-action">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <!-- Avatar -->
+                        <img alt="Image placeholder" src="assets/img/theme/team-1.jpg" class="avatar rounded-circle">
+                      </div>
+                      <div class="col ml--2">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <h4 class="mb-0 text-sm">John Snow</h4>
+                          </div>
+                          <div class="text-right text-muted">
+                            <small>2 hrs ago</small>
+                          </div>
+                        </div>
+                        <p class="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- View all -->
+                <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav align-items-center ml-md-0 ">
+            <li class="nav-item dropdown">
+              <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <div class="media align-items-center">
+                  <span class="avatar avatar-sm rounded-circle">
+                    <img alt="Image placeholder" src="assets/img/theme/team-4.jpg">
+                  </span>
+                  <div class="media-body  ml-2  d-none d-lg-block">
+                    <span class="mb-0 text-sm  font-weight-bold">Harki Ramadhan</span>
+                  </div>
+                </div>
+              </a>
+              <div class="dropdown-menu  dropdown-menu-right ">
+                <div class="dropdown-header noti-title">
+                  <h6 class="text-overflow m-0">Welcome!</h6>
+                </div>
+                <a href="#!" class="dropdown-item">
+                  <i class="ni ni-single-02"></i>
+                  <span>My profile</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#!" class="dropdown-item">
+                  <i class="ni ni-user-run"></i>
+                  <span>Logout</span>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Header -->
+    <div class="header bg-primary pb-6 mb-lg-2 mb-3">
+      <div class="container-fluid">
+        <div class="header-body">
+          <div class="row align-items-start py-4">
+            <div class="col-lg-6 col-12">
+              <h6 class="h2 text-white d-inline-block mb-0">Donasi</h6>
+              <p class="text-white mb-0">Pada halaman ini, admin bisa melihat daftar donasi yang masuk sekaligus
+                melakukan verifikasi apakah donasi benar masuk atau tidak.</p>
+              <nav aria-label="breadcrumb" class="d-none d-md-inline-block mt-3">
+                <ol class="breadcrumb breadcrumb-links breadcrumb-dark bg-gradient-white">
+                  <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home"></i></a></li>
+                  <!-- <li class="breadcrumb-item"><a href="#">Beranda</a></li> -->
+                  <li class="breadcrumb-item active" aria-current="page">Donasi</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="col-lg-6 col-12 text-right">
+              <div class="btn-group">
+                <button type="button" class="btn btn-success ml-1 rounded-pill" data-toggle="modal"
+                  data-target="#tambahAgenda"><i class="fas fa-plus-circle mr-1"></i> Donasi Manual</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid mt--7">
+      <!-- Table -->
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div class="card-header d-md-inline-block bg-transparent border-0">
+              <div class="row align-items-center">
+                <div class="col-lg-9">
+                  <h3 class="mb-0">Daftar Donasi Masuk</h3>
+                </div>
+                <div class="col-lg-3 mt-3 mt-lg-0">
+                  <div class="form-group-xs">
+                    <input type="text" id="myInput" placeholder="Cari Donatur . . . ."
+                      class="form-control form-control-alternative">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="table-responsive" style="max-height: 500px">
+              <div id="table_guru">
+                <table class="table table-sm align-items-center table-flush">
+                  <thead class="thead-light">
+                    <tr>
+                      <th width="5px" class="text-center">No</th>
+                      <th>Donatur</th>
+                      <th width="5px" class="text-center">Aksi</th>
+                      <th width="5px" class="text-center">Nominal</th>
+                      <th width="5px" class="text-center">Tanggal</th>
+                      <th width="5px" class="text-center"></th>
+                    </tr>
+                  </thead>
+                  <tbody id="myTable">
+                    <tr>
+                      <td scope="row" class="text-center">1</td>
+                      <td scope="row">
+                        Harki Ramadhan
+                      </td>
+                      <td scope="row">
+                        <button class="btn btn-primary btn-sm" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Aksi 1000 HP untuk anak . . ">001<i class="fas fa-info-circle ml-1"></i></button>
+                      </td>
+                      <td scope="row">
+                        Rp. 300.201
+                        <span>- TF</span>
+                      </td>
+                      <td scope="row">
+                        2 Juli 2021
+                      </td>
+                      <td scope="row" class="text-center">
+                        <div class="btn-group">
+                          <a class="btn btn-sm btn-success mr-1" href="#"><i class="fas fa-check"></i></a>
+                          <a class="btn btn-sm btn-default mr-1" href="#"><i class="fas fa-pencil-alt"></i></a>
+                          <button type="button" class="btn btn-sm btn-danger delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td scope="row" class="text-center">2</td>
+                      <td scope="row">
+                        Harki Ramadhan
+                      </td>
+                      <td scope="row">
+                        <button class="btn btn-primary btn-sm" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Aksi 1000 HP untuk anak . . ">001<i class="fas fa-info-circle ml-1"></i></button>
+                      </td>
+                      <td scope="row">
+                        Rp. 300.201
+                        <span>- CM</span>
+                      </td>
+                      <td scope="row">
+                        2 Juli 2021
+                      </td>
+                      <td scope="row" class="text-center">
+                        <div class="btn-group">
+                          <a class="btn btn-sm btn-success mr-1" href="#"><i class="fas fa-check"></i></a>
+                          <a class="btn btn-sm btn-default mr-1" href="#"><i class="fas fa-pencil-alt"></i></a>
+                          <button type="button" class="btn btn-sm btn-danger delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="modal-notification"
+        aria-hidden="true">
+        <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+          <div class="modal-content bg-gradient-danger">
+            <div id="del"></div>
+          </div>
+        </div>
+      </div> <!-- Footer -->
+      <footer class="footer text-center">
+        <div class="row align-items-center justify-content-xl-between">
+          <div class="col-xl-12 text-center">
+            <div class="copyright text-center text-xl-left text-muted">
+              Copyright © 2021 <strong>aksipangan.com</strong>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Modal Tambah Donasi-->
+      <div class="modal fade" id="tambahAgenda" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Tambah Donasi Manual</h5>
+            </div>
+            <div class="modal-body bg-secondary">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-nama">Nama <span class="text-danger">*</span></label>
+                    <input type="text" id="input-nama" class="form-control" placeholder="Tulis Nama Donatur" value="">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email</label>
+                    <input type="email" id="input-email" class="form-control" placeholder="Tulis Email Donatur">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-whatsapp">No Whatsapp</label>
+                    <input type="text" id="input-whatsapp" class="form-control" placeholder="Tulis Nomor Whatsapp">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-nominal">Nominal Donasi <span class="text-danger">*</span></label>
+                    <input type="text" id="input-nominal" class="form-control" placeholder="Tulis Nominal Donasi">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="input-aksi">Pilih Aksi <span class="text-danger">*</span></label>
+                    <select class="form-control" id="input-aksi">
+                      <option>1000 HP</option>
+                      <option>Paket Isoman</option>
+                      <option>Lainnya (Tulis di Catatan)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="input-pembayaran">Jenis Pembayaran <span class="text-danger">*</span></label>
+                    <select class="form-control" id="input-pembayaran">
+                      <option>TF - Transfer Bank</option>
+                      <option>CM - Cash/Manual</option>
+                      <option>Lainnya (Tulis di Catatan)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Tanggal Pembayaran</label>
+                    <input type="date" id="input-email" class="form-control" placeholder="">
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label">Catatan</label>
+                    <textarea rows="4" class="form-control" placeholder="Tulis beberapa catatan jika ada"></textarea>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <label class="form-control-label">Upload Bukti</label>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="input-bukti">
+                    <label class="custom-file-label" for="input-bukti">Choose file</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <p class="h6 mt-3"><i>Diinput Oleh Harki Ramadhan (Admin)</i></p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary rounded-pill">Simpan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    
+    
+    <!-- Argon Scripts -->
+    <!-- Core -->
+    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/js-cookie/js.cookie.js"></script>
+    <script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+    <!-- Optional JS -->
+    <script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
+    <script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
+    <!-- Argon JS -->
+    <script src="assets/js/argon.js?v=1.2.0"></script>
+</body>
+
+</html>
