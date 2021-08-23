@@ -60,7 +60,7 @@
                 <i class="fas fa-wallet pt-1 text-primary"></i>
                 <span class="nav-link-text">Donasi</span>
               </a>
-              <a class="nav-link" href="examples/dashboard.html">
+              <a class="nav-link <?= ($this->uri->segment(1) == 'aksi') ? 'active' : '' ?>" href="<?= site_url('aksi') ?>">
                 <i class="fas fa-hands-helping text-primary"></i>
                 <span class="nav-link-text">Aksi</span>
               </a>
@@ -132,7 +132,7 @@
                     <img alt="Image placeholder" src="<?= base_url('assets/img/theme/team-4.jpg') ?>">
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">Alfian Rahmatullah</span>
+                    <span class="mb-0 text-sm  font-weight-bold"><?= $this->session->userdata('email') ?></span>
                   </div>
                 </div>
               </a>
