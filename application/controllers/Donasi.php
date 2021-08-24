@@ -10,7 +10,9 @@ class Donasi extends CI_Controller{
     }
 
     function index(){
-        $this->load->view('admin/header');
+        $var['title'] = "Donasi - Admin aksipangan.com";
+        
+        $this->load->view('admin/header', $var);
         $this->load->view('admin/donasi');
         $this->load->view('admin/footer');
     }

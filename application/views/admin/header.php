@@ -21,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>Beranda - Admin aksipangan.com</title>
+  <title><?= (@$title == TRUE) ? @$title : 'aksipangan.com' ?></title>
   <!-- Favicon -->
   <link rel="icon" href="<?= base_url('assets/img/brand/logo100.svg') ?>" type="image/png">
   <!-- Fonts -->
@@ -74,6 +74,26 @@
   <div class="main-content" id="panel">
     <!-- Topnav -->
     <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+      <?php 
+      $data=$this->session->flashdata('success');
+      if($data!=""){?>
+      <div class="sticky-top col-md-12 alert" style="position: absolute;">
+        <div class="alert alert-success" role="alert">
+            <span class="alert-inner--icon"><i class="ni ni-notification-70"></i></span>
+            <span class="alert-inner--text"><strong> &nbsp Sukses! </strong><?=$data;?></span>
+        </div>
+      </div>
+      <?php } ?>
+      <?php 
+      $data2=$this->session->flashdata('error');
+      if($data2!=""){?>
+      <div class="sticky-top col-md-12 alert" style="position: absolute;">
+        <div class="alert alert-warning" role="alert">
+            <span class="alert-inner--icon"><i class="ni ni-notification-70"></i></span>
+            <span class="alert-inner--text"><strong> &nbsp Error! </strong><?=$data2;?></span>
+        </div>
+      </div>
+      <?php } ?>
       <div class="container-fluid">
         <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
           <!-- Navbar links -->

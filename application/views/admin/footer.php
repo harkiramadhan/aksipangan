@@ -20,6 +20,14 @@
         <script src="<?= base_url('assets/vendor/chart.js/dist/Chart.extension.js') ?>"></script>
         <!-- Argon JS -->
         <script src="<?= base_url('assets/js/argon.js?v=1.2.0') ?>"></script>
+
+        <script>
+            var baseUrl = '<?= site_url() ?>/'
+        </script>
+        <?php if(@$ajax){
+            foreach($ajax as $a){ ?>
+                <script src="<?= base_url('assets/js/custom/') . $a .'.js' ?>"></script>
+        <?php }} ?>
     </body>
 
 </html>

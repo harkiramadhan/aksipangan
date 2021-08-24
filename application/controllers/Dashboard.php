@@ -10,7 +10,9 @@ class Dashboard extends CI_Controller{
     }
 
     function index(){
-        $this->load->view('admin/header');
+        $var['title'] = "Dashboard - Admin aksipangan.com";
+
+        $this->load->view('admin/header', $var);
         $this->load->view('admin/dashboard');
         $this->load->view('admin/footer');
     }
