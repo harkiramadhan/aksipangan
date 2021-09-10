@@ -78,9 +78,11 @@
       $data=$this->session->flashdata('success');
       if($data!=""){?>
       <div class="sticky-top col-md-12 alert" style="position: absolute;">
-        <div class="alert alert-success" role="alert">
-            <span class="alert-inner--icon"><i class="ni ni-notification-70"></i></span>
-            <span class="alert-inner--text"><strong> &nbsp Sukses! </strong><?=$data;?></span>
+        <div class="alert alert-success alert-dismissible fade show mb-0 position-relative fixed-top rounded-0" role="alert">
+          <strong> &nbsp Sukses! </strong><?=$data;?>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
       </div>
       <?php } ?>
@@ -88,9 +90,11 @@
       $data2=$this->session->flashdata('error');
       if($data2!=""){?>
       <div class="sticky-top col-md-12 alert" style="position: absolute;">
-        <div class="alert alert-warning" role="alert">
-            <span class="alert-inner--icon"><i class="ni ni-notification-70"></i></span>
-            <span class="alert-inner--text"><strong> &nbsp Error! </strong><?=$data2;?></span>
+        <div class="alert alert-success alert-dismissible fade show mb-0 position-relative fixed-top rounded-0" role="alert">
+          <strong> &nbsp Error! </strong><?=$data2;?>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
       </div>
       <?php } ?>

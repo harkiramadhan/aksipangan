@@ -36,7 +36,8 @@ class Aksi extends CI_Controller{
                 'judul' => $this->input->post('judul', TRUE),
                 'target' => $this->input->post('target', TRUE),
                 'due' => $this->input->post('due', TRUE),
-                'cover' => $img['file_name']
+                'cover' => $img['file_name'],
+                'created_at' => date('Y-m-d H:i:s')
             ];
 
             $this->db->insert('aksi', $data);
@@ -54,7 +55,8 @@ class Aksi extends CI_Controller{
                     'judul' => $this->input->post('judul', TRUE),
                     'target' => $this->input->post('target', TRUE),
                     'due' => $this->input->post('due', TRUE),
-                    'cover_url' => $this->input->post('cover_url', TRUE)
+                    'cover_url' => $this->input->post('cover_url', TRUE),
+                    'created_at' => date('Y-m-d H:i:s')
                 ];
     
                 $this->db->insert('aksi', $data);
