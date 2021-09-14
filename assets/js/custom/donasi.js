@@ -2,7 +2,7 @@ $('.btn-edit').click(function(){
     var id = $(this).attr('data-id')
     
     $.ajax({
-        url: baseUrl + 'donasi/ajaxModalEdit/' + id,
+        url: baseUrl + 'admin/donasi/ajaxModalEdit/' + id,
         type: 'get',
         beforeSend: function(){
             $('#modal-edit').modal('show')
@@ -17,7 +17,7 @@ $('.btn-delete').click(function(){
     var id = $(this).attr('data-id')
     
     $.ajax({
-        url: baseUrl + 'donasi/ajaxModalDelete/' + id,
+        url: baseUrl + 'admin/donasi/ajaxModalDelete/' + id,
         type: 'get',
         beforeSend: function(){
             $('#modal-delete').modal('show')
@@ -33,7 +33,7 @@ $('.btn-verif').click(function(){
     var id = $(this).attr('data-id')
 
     $.ajax({
-        url: baseUrl + 'donasi/ajaxUpdateStatus',
+        url: baseUrl + 'admin/donasi/ajaxUpdateStatus',
         type: 'post',
         data: {type : type, id : id},
         success: function(res){

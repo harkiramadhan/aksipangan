@@ -34,8 +34,9 @@ class Aksi extends CI_Controller{
             
             $data = [
                 'judul' => $this->input->post('judul', TRUE),
+                'deskripsi' => $this->input->post('deskripsi', TRUE),
                 'target' => $this->input->post('target', TRUE),
-                'due' => $this->input->post('due', TRUE),
+                'due' => ($this->input->post('due', TRUE) == TRUE) ? $this->input->post('due', TRUE) : NULL,
                 'cover' => $img['file_name'],
                 'created_at' => date('Y-m-d H:i:s')
             ];
@@ -53,8 +54,9 @@ class Aksi extends CI_Controller{
             if($this->input->post('cover_url') == TRUE){
                 $data = [
                     'judul' => $this->input->post('judul', TRUE),
+                    'deskripsi' => $this->input->post('deskripsi', TRUE),
                     'target' => $this->input->post('target', TRUE),
-                    'due' => $this->input->post('due', TRUE),
+                    'due' => ($this->input->post('due', TRUE) == TRUE) ? $this->input->post('due', TRUE) : NULL,
                     'cover_url' => $this->input->post('cover_url', TRUE),
                     'created_at' => date('Y-m-d H:i:s')
                 ];
@@ -95,8 +97,9 @@ class Aksi extends CI_Controller{
             
             $data = [
                 'judul' => $this->input->post('judul', TRUE),
+                'deskripsi' => $this->input->post('deskripsi', TRUE),
                 'target' => $this->input->post('target', TRUE),
-                'due' => $this->input->post('due', TRUE),
+                'due' => ($this->input->post('due', TRUE) == TRUE) ? $this->input->post('due', TRUE) : NULL,
                 'cover' => $img['file_name'],
                 'cover_url' => ''
             ];
@@ -119,8 +122,9 @@ class Aksi extends CI_Controller{
 
             $data = [
                 'judul' => $this->input->post('judul', TRUE),
+                'deskripsi' => $this->input->post('deskripsi', TRUE),
                 'target' => $this->input->post('target', TRUE),
-                'due' => $this->input->post('due', TRUE),
+                'due' => ($this->input->post('due', TRUE) == TRUE) ? $this->input->post('due', TRUE) : NULL,
                 'cover_url' => $this->input->post('cover_url', TRUE),
                 'cover' => ''
             ];
@@ -187,6 +191,12 @@ class Aksi extends CI_Controller{
                                 <input type="text" name="judul" class="form-control" placeholder="Tulis judul" value="<?= $aksi['judul'] ?>" required>
                             </div>
                         </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="form-control-label" >Deskripsi <span class="text-danger">*</span></label>
+                                <textarea name="deskripsi" cols="30" rows="10" class="form-control"><?= $aksi['deskripsi'] ?></textarea>
+                            </div>
+                        </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="form-control-label" for="input-email">Target (Rp. ) <span class="text-danger">*</span></label>
@@ -195,8 +205,8 @@ class Aksi extends CI_Controller{
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="form-control-label" for="input-email">Due Date <span class="text-danger">*</span></label>
-                                <input type="date" name="due" class="form-control" placeholder="Due Date" value="<?= $aksi['due'] ?>" required>
+                                <label class="form-control-label" for="input-email">Due Date</label>
+                                <input type="date" name="due" class="form-control" placeholder="Due Date" value="<?= $aksi['due'] ?>">
                             </div>
                         </div>
                         <div class="col-lg-12">

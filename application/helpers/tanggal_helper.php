@@ -321,3 +321,10 @@
         $hasil_rupiah = number_format($angka,2,',','.');
         return $hasil_rupiah;
     }
+
+    function due($dates){
+        $date = strtotime($dates);
+        $remaining = $date - time();
+        $days_remaining = floor($remaining / 86400);
+        return $days_remaining + 1;
+    }

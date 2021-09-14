@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../aksipangan-admin-front"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "aksipangan-admin-front"
+	}
+}

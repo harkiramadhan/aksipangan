@@ -52,15 +52,15 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link <?= ($this->uri->segment(1) == 'dashboard') ? 'active' : '' ?>" href="<?= site_url('dashboard') ?>">
+              <a class="nav-link <?= ($this->uri->segment(2) == 'dashboard') ? 'active' : '' ?>" href="<?= site_url('admin/dashboard') ?>">
                 <i class="fas fa-home text-primary"></i>
                 <span class="nav-link-text">Beranda</span>
               </a>
-              <a class="nav-link <?= ($this->uri->segment(1) == 'donasi') ? 'active' : '' ?>" href="<?= site_url('donasi') ?>">
+              <a class="nav-link <?= ($this->uri->segment(2) == 'donasi') ? 'active' : '' ?>" href="<?= site_url('admin/donasi') ?>">
                 <i class="fas fa-wallet pt-1 text-primary"></i>
                 <span class="nav-link-text">Donasi</span>
               </a>
-              <a class="nav-link <?= ($this->uri->segment(1) == 'aksi') ? 'active' : '' ?>" href="<?= site_url('aksi') ?>">
+              <a class="nav-link <?= ($this->uri->segment(2) == 'aksi') ? 'active' : '' ?>" href="<?= site_url('admin/aksi') ?>">
                 <i class="fas fa-hands-helping text-primary"></i>
                 <span class="nav-link-text">Aksi</span>
               </a>

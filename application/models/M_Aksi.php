@@ -1,7 +1,7 @@
 <?php
 class M_Aksi extends CI_Model{
     function get(){
-        return $this->db->get('aksi');
+        return $this->db->order_by('id', "DESC")->get('aksi');
     }
 
     function getById($id){

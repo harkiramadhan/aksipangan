@@ -2,7 +2,11 @@
 class Auth extends CI_Controller{
     function __construct(){
         parent::__construct();
-        $this->load->model('M_User');    
+        $this->load->model('M_User'); 
+        
+        if($this->session->userdata('role') == 1){
+            redirect('admin/dashboard');
+        }
     }
 
     function index(){
@@ -22,10 +26,7 @@ class Auth extends CI_Controller{
             $this->session->set_userdata('role', $userdata['idrole']);
             $this->session->set_userdata('email', $userdata['email']);
 
-            redirect('dashboard', 'refresh');
-            // if($userdata['idrole'] == 1):
-            // else:
-            // endif;
+            redirect('admin/dashboard', 'refresh');
         }else{
             $this->session->set_flashdata('msg', 'Email Atau Password Tidak Sesuai');
             redirect($_SERVER['HTTP_REFERER'], 'refresh');

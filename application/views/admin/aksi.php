@@ -70,7 +70,7 @@
                                             <button class="btn btn-primary btn-sm"  data-toggle="popover"  data-html="true" data-placement="left" data-content="<img height='250px' src='<?= $url ?>'/>"><i class="fas fa-eye"></i></button>
                                         </td>
                                         <td scope="row">Rp. <?= rupiah($row->target) ?></td>
-                                        <td><?= longdate_indo($row->due) ?></td>
+                                        <td><?= ($row->due == TRUE) ? longdate_indo($row->due) : '..' ?></td>
                                         <td scope="row" class="text-center">
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-sm btn-default mr-1 btn-edit" data-id="<?= $row->id ?>"><i class="fas fa-pencil-alt"></i></button>
@@ -103,6 +103,12 @@
                                 <input type="text" name="judul" class="form-control" placeholder="Tulis judul" value="" required>
                             </div>
                         </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="form-control-label" >Deskripsi <span class="text-danger">*</span></label>
+                                <textarea name="deskripsi" cols="30" rows="10" class="form-control"></textarea>
+                            </div>
+                        </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="form-control-label" for="input-email">Target (Rp. ) <span class="text-danger">*</span></label>
@@ -111,8 +117,8 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="form-control-label" for="input-email">Due Date <span class="text-danger">*</span></label>
-                                <input type="date" name="due" class="form-control" placeholder="Due Date" required>
+                                <label class="form-control-label" for="input-email">Due Date </label>
+                                <input type="date" name="due" class="form-control" placeholder="Due Date" >
                             </div>
                         </div>
                         <div class="col-lg-12">
