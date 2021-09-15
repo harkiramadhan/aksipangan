@@ -100,6 +100,7 @@ class Home extends CI_Controller{
                 'payment_option' => $donationPaymentOptions,
                 'created_at' => date('Y-m-d H:i:s')
             ];
+
             $this->db->insert('donasi', $data);
 
             if($this->db->affected_rows() > 0){

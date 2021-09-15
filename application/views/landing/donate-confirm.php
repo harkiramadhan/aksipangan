@@ -146,6 +146,10 @@
 												</span>
 											</div>
 										</div>
+										<!-- <div class="form-group col-12">
+											<label class="wdFromLabel d-block">Donasi Sebagai Anonim</label>
+											<input type="checkbox" class="form-control rounded" name="hide" value="1">
+										</div> -->
 									</div>
 									<div class="form-row">
 										<!-- form-group  -->
