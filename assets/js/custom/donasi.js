@@ -37,8 +37,24 @@ $('.btn-verif').click(function(){
         type: 'post',
         data: {type : type, id : id},
         success: function(res){
-            window.history.pushState("", "", baseUrl + "donasi") 
+            window.history.pushState("", "", baseUrl + "admin/donasi") 
             window.location.reload()
+        }
+    })
+})
+
+$('.btn-bukti').click(function(){
+    var iddonasi = $(this).attr('data-id')
+
+    $.ajax({
+        url: baseUrl + 'admin/donasi/ajaxModalImage',
+        type: 'get',
+        data: {iddonasi : iddonasi},
+        beforeSend: function(){
+            $('#modal-image').modal('show')
+        },
+        success: function(res){
+            $('.content-image').html(res)
         }
     })
 })

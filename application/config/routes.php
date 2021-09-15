@@ -57,5 +57,7 @@ $route['admin'] = 'admin/auth';
 $route['logout'] = 'auth/logout';
 $route['aksi'] = 'home/aksi';
 $route['aksi/(:num)'] = 'home/detailAksi/$1';
+$route['donasi/(:num)'] = 'home/donasiAksi/$1';
+$route['donasi/detail/(:num)'] = 'home/donasiNow/$1';
 
 $route['aboutus'] = 'home/aboutUs';

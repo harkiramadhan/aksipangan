@@ -20,6 +20,7 @@
         <script src="<?= base_url('assets/vendor/chart.js/dist/Chart.extension.js') ?>"></script>
         <!-- Argon JS -->
         <script src="<?= base_url('assets/js/argon.js?v=1.2.0') ?>"></script>
+        <script src="<?= base_url('assets/js/style.js') ?>"></script>
 
         <script>
             var baseUrl = '<?= site_url() ?>/'

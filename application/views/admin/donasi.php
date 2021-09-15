@@ -68,9 +68,9 @@
                                     </td>
                                     <td scope="row text-center">
                                         <?php if($row['status'] == 0): ?>
-                                            <button class="btn btn-sm btn-block btn-warning">&nbsp;Belum Di Verifikasi&nbsp;</button>
+                                            <button class="btn btn-sm btn-block btn-warning btn-bukti" data-id="<?= $row['id'] ?>">&nbsp;Belum Di Verifikasi&nbsp;</button>
                                         <?php elseif($row['status'] == 1): ?>
-                                            <button class="btn btn-sm btn-block btn-success">&nbsp;Sudah Di Verifikasi&nbsp;</button>
+                                            <button class="btn btn-sm btn-block btn-success btn-bukti" data-id="<?= $row['id'] ?>">&nbsp;Sudah Di Verifikasi&nbsp;</button>
                                         <?php endif; ?>
                                     </td>
                                     <td scope="row">
@@ -106,7 +106,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Tambah Donasi Manual</h5>
                 </div>
-                <form action="<?= site_url('donasi/create') ?>" method="post" enctype="multipart/form-data">
+                <form action="<?= site_url('admin/donasi/create') ?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body bg-secondary">
                         <div class="row">
                             <div class="col-lg-6">
@@ -196,7 +196,7 @@
         </div>
     </div>
 
-    <!-- Modal Edit Aksi -->
+    <!-- Modal Edit Donasi -->
     <div class="modal fade" id="modal-edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content content-edit">
@@ -205,7 +205,16 @@
         </div>
     </div>
 
-    <!-- Modal Delete Aksi -->
+    <!-- Modal Image Donasi -->
+    <div class="modal fade" id="modal-image" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content content-image">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Delete Donasi -->
     <div class="modal fade" id="modal-delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-danger modal-dialog-centered modal-md">
             <div class="modal-content content-delete bg-gradient-danger ">

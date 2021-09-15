@@ -1,3 +1,12 @@
+<?php
+    $getDonasi = $this->db->select('SUM(`nominal`) as total')
+                        ->from('donasi')    
+                        ->where([
+                            'idaksi' => $aksi->id,
+                            'status' => 1
+                        ])->get()->row()
+?>
+
 <main>
     <!-- bannerSec / bannerSecII -->
     <section class="bannerSec bannerSecII d-flex position-relative overflow-hidden">
@@ -50,7 +59,7 @@
                                             <div class="row mt-2 pb-2">
                                                 <div class="col">
                                                     <span class="text-left text-black"><strong>Terkumpul</strong></span>
-                                                    <span class="d-block text-left"><i class="fa fa-wallet mr-1 text-info"></i> Rp. 0</span>
+                                                    <span class="d-block text-left"><i class="fa fa-wallet mr-1 text-info"></i> Rp. <strong><?= ($getDonasi->total > 0) ? rupiah($getDonasi->total) : 0 ?></strong></span>
                                                 </div>
                                                 <div class="col-5">
                                                     <span class="text-left text-black"><strong>Sisa Hari</strong></span>
@@ -107,75 +116,32 @@
                                                 <div class="tab-pane fade" id="cgspOrangBaik" role="tabpanel" aria-labelledby="tab03">
                                                     <!-- cDonRow -->
                                                     <div class="row cDonRow mb-2 mx-md-n2">
+                                                        <?php foreach($donatur->result() as $row){ ?>
                                                         <div class="col-12 col-md-6 col d-flex px-md-2">
                                                             <!-- cDonCol -->
                                                             <div class="cDonCol rounded d-flex align-items-center w-100 py-4 px-5">
-                                                                <span class="cDonImgWrap rounded-circle position-relative overflow-hidden d-flex justify-content-center align-items-center mr-3">KD</span>
+                                                                <span class="cDonImgWrap rounded-circle position-relative overflow-hidden d-flex justify-content-center align-items-center mr-3"><?php
+                                                                    $string = explode(" ", $row->nama);
+                                                                    $end = (@$string[1] == TRUE) ? @$string[1][0] : substr($row->nama, -1, 1);
+                                                                    $last = $string[0][0]."".$end;
+                                                                    echo $last;
+                                                                ?></span>
                                                                 <div class="cDonarInfoWrap">
-                                                                    <strong class="cDonarName fwNormal d-block">Khon Deck</strong>
-                                                                    <span class="cDonatationAmount d-block">Donated: $100.00</span>
+                                                                    <strong class="cDonarName fwNormal d-block"><?= ($row->hide == 1) ? $row->nama[0]."*****".substr($row->nama, -1, 1) : $row->nama ?></strong>
+                                                                    <span class="cDonatationAmount d-block">Donated: Rp. <strong><?= rupiah($row->nominal) ?></strong></span>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-12 col-md-6 col d-flex px-2">
-                                                            <!-- cDonCol -->
-                                                            <div class="cDonCol rounded d-flex align-items-center w-100 py-4 px-5">
-                                                                <span class="cDonImgWrap rounded-circle position-relative overflow-hidden d-flex justify-content-center align-items-center mr-3">AN</span>
-                                                                <div class="cDonarInfoWrap">
-                                                                    <strong class="cDonarName fwNormal d-block">Amna Rose</strong>
-                                                                    <span class="cDonatationAmount d-block">Donated: $32.00</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12 col-md-6 col d-flex px-2">
-                                                            <!-- cDonCol -->
-                                                            <div class="cDonCol rounded d-flex align-items-center w-100 py-4 px-5">
-                                                                <span class="cDonImgWrap rounded-circle position-relative overflow-hidden d-flex justify-content-center align-items-center mr-3">DR</span>
-                                                                <div class="cDonarInfoWrap">
-                                                                    <strong class="cDonarName fwNormal d-block">Decko Rasa</strong>
-                                                                    <span class="cDonatationAmount d-block">Donated: $15.00</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12 col-md-6 col d-flex px-2">
-                                                            <!-- cDonCol -->
-                                                            <div class="cDonCol rounded d-flex align-items-center w-100 py-4 px-5">
-                                                                <span class="cDonImgWrap rounded-circle position-relative overflow-hidden d-flex justify-content-center align-items-center mr-3">M</span>
-                                                                <div class="cDonarInfoWrap">
-                                                                    <strong class="cDonarName fwNormal d-block">Merlin</strong>
-                                                                    <span class="cDonatationAmount d-block">Donated: $5.00</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12 col-md-6 col d-flex px-2">
-                                                            <!-- cDonCol -->
-                                                            <div class="cDonCol rounded d-flex align-items-center w-100 py-4 px-5">
-                                                                <span class="cDonImgWrap rounded-circle position-relative overflow-hidden d-flex justify-content-center align-items-center mr-3">KA</span>
-                                                                <div class="cDonarInfoWrap">
-                                                                    <strong class="cDonarName fwNormal d-block">Kavi Aarun</strong>
-                                                                    <span class="cDonatationAmount d-block">Donated: $50.00</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12 col-md-6 col d-flex px-2">
-                                                            <!-- cDonCol -->
-                                                            <div class="cDonCol rounded d-flex align-items-center w-100 py-4 px-5">
-                                                                <span class="cDonImgWrap rounded-circle position-relative overflow-hidden d-flex justify-content-center align-items-center mr-3">PT</span>
-                                                                <div class="cDonarInfoWrap">
-                                                                    <strong class="cDonarName fwNormal d-block">Piease Taro</strong>
-                                                                    <span class="cDonatationAmount d-block">Donated: $150.00</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <?php } ?>
                                                     </div>
-                                                    <div class="row mb-5 mb-md-10">
+                                                    <!-- <div class="row mb-5 mb-md-10">
                                                         <div class="col-12 text-center">
                                                             <a href="javascript:void(0);" class="txtLink fwSemibold fsSmall">Load More&hellip;</a>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
-                                            <a href="javascript:void(0);" class="btn btnPrimary btnMin align-top p-0 border-0 position-relative btn-block mb-5" data-hover="Donasi Seakrang">
+                                            <a href="<?= site_url('donasi/' . $aksi->id) ?>" class="btn btnPrimary btnMin align-top p-0 border-0 position-relative btn-block mb-5" data-hover="Donasi Seakrang">
                                                 <span class="d-block btnText">Donasi Sekoarang</span>
                                             </a>
                                         </div>

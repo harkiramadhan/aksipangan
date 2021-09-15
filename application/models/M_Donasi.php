@@ -16,4 +16,15 @@ class M_Donasi extends CI_Model{
                         ->where(['d.id' => $id])
                         ->order_by('d.id', 'DESC')->get();
     }
+
+    function getByAksi($idaksi){
+        return $this->db->select('d.*, p.jenis, a.judul')
+                        ->from('donasi d')
+                        ->join('aksi a', 'd.idaksi = a.id', 'LEFT')
+                        ->join('metode_pembayaran p', 'd.idmetode = p.id', 'LEFT')
+                        ->where([
+                            'd.idaksi' => $idaksi,
+                            'd.status' => 1
+                        ])->order_by('d.id', 'DESC')->get();
+    }
 }

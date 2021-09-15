@@ -129,7 +129,7 @@ class Donasi extends CI_Controller{
         $config['source_image'] = './assets/img/bukti/'.$filename;  
         $config['create_thumb'] = FALSE;  
         $config['maintain_ratio'] = TRUE;  
-        $config['quality'] = '75%';  
+        $config['quality'] = '95%';  
         $config['new_image'] = './assets/img/bukti/'.$filename;  
         $config['width'] = 500;              
   
@@ -148,7 +148,7 @@ class Donasi extends CI_Controller{
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Edit Donasi</h5>
             </div>
-            <form action="<?= site_url('donasi/update/' . $id) ?>" method="post" enctype="multipart/form-data">
+            <form action="<?= site_url('admin/donasi/update/' . $id) ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body bg-secondary">
                     <div class="row">
                         <div class="col-lg-6">
@@ -225,7 +225,7 @@ class Donasi extends CI_Controller{
                             </div>
                         </div>
                         <div class="col">
-                            <p class="h6 mt-3"><i>Diinput Oleh Harki Ramadhan (Admin)</i></p>
+                            <!-- <p class="h6 mt-3"><i>Diinput Oleh Harki Ramadhan (Admin)</i></p> -->
                         </div>
                     </div>
                 </div>
@@ -255,11 +255,45 @@ class Donasi extends CI_Controller{
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-link text-white" data-dismiss="modal">Batal</button>
-                <form action="<?= site_url('donasi/delete/' . $id) ?>" method="post">
+                <form action="<?= site_url('admin/donasi/delete/' . $id) ?>" method="post">
                     <button type="submit" class="btn btn-white ml-auto">Ya, Hapus</button>
                 </form>
             </div>
         <?php        
+    }
+
+    function ajaxModalImage(){
+        $iddonasi = $this->input->get('iddonasi', TRUE);
+        $donasi = $this->db->select('donasi.*, aksi.judul')
+                            ->from('donasi')
+                            ->join('aksi', 'donasi.idaksi = aksi.id')
+                            ->where('donasi.id', $iddonasi)
+                            ->get()->row(); 
+        ?>
+            <div class="modal-header bg-secondary">
+                <h6 class="modal-title mb-0" id="modal-title-notification">Bukti Donasi</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body text-center" width="100%">
+                <button class=" btn btn-block btn-default mb-3"><strong><?= $donasi->nama ?></strong> - <?= $donasi->judul ?></button>
+                <?php if($donasi->img == TRUE): ?>
+                    <div class="py-3 text-center mb-0">
+                        <img class="rounded" src="<?= base_url('assets/img/bukti/' . $donasi->img) ?>" alt="" width="100%">
+                    </div>
+                <?php else: ?>
+                    <div class="py-0 text-center mb-0">
+                        <div class="alert alert-danger" role="alert">
+                            <strong>Bukti Tidak Tersedia</strong>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+            <div class="modal-footer bg-secondary">
+                <button type="button" class="btn btn-sm btn-default text-white" data-dismiss="modal">Tutup</button>
+            </div>
+        <?php
     }
 
     function ajaxUpdateStatus(){

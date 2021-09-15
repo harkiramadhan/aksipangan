@@ -54,7 +54,7 @@
         <div class="col-lg-5 col-md-7">
           <div class="card bg-secondary border-0 mb-0">
             <div class="card-body px-lg-5 py-lg-5">
-              <form role="form" action="<?= site_url('auth/login') ?>" method="post">
+              <form role="form" action="<?= site_url('admin/auth/login') ?>" method="post">
                 <h5 class="text-danger text-center"> <b><?= $this->session->flashdata('msg'); ?></b> </h5>
                 <div class="form-group mb-3">
                   <div class="input-group input-group-merge input-group-alternative">

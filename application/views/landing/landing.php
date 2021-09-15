@@ -35,7 +35,15 @@
                 </div>
             </div>
             <div class="row cgSecRow">
-                <?php foreach($aksi->result() as $row){ ?>
+                <?php 
+                    foreach($aksi->result() as $row){ 
+                        $getDonasi = $this->db->select('SUM(`nominal`) as total')
+                                                                ->from('donasi')    
+                                                                ->where([
+                                                                    'idaksi' => $row->id,
+                                                                    'status' => 1
+                                                                ])->get()->row();
+                ?>
                 <!-- <?= $row->judul ?> -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <!-- causeGridCol -->
@@ -50,7 +58,7 @@
                                 <div class="row mt-2 px-3 pb-2">
                                     <div class="col">
                                         <span class="text-left text-black"><strong>Terkumpul</strong></span>
-                                        <span class="d-block text-left"><i class="fa fa-wallet mr-1 text-info"></i> Rp. 0</span>
+                                        <span class="d-block text-left"><i class="fa fa-wallet mr-1 text-info"></i> Rp. <strong><?= ($getDonasi->total > 0) ? rupiah($getDonasi->total) : 0 ?></strong></span>
                                     </div>
                                     <div class="col-5">
                                         <span class="text-left text-black"><strong>Sisa Hari</strong></span>

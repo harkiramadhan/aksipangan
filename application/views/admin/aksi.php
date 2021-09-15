@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-lg-3 mt-3 mt-lg-0">
                             <div class="form-group-xs">
-                                <input type="text" id="myInput" placeholder="Cari Donatur . . . ." class="form-control form-control-alternative">
+                                <input type="text" id="myInput" placeholder="Cari Aksi . . . ." class="form-control form-control-alternative">
                             </div>
                         </div>
                     </div>
@@ -49,6 +49,7 @@
                                     <th width="5px" class="text-center">No</th>
                                     <th>Judul</th>
                                     <th width="5px" class="text-center">Cover</th>
+                                    <th width="5px" class="text-center">Terkumpul</th>
                                     <th width="5px" class="text-center">Target</th>
                                     <th width="5px" class="text-center">Due Date</th>
                                     <th width="5px" class="text-center"></th>
@@ -57,7 +58,14 @@
                             <tbody id="myTable">
                                 <?php 
                                     $no = 1;
-                                    foreach($aksi->result() as $row){ ?>
+                                    foreach($aksi->result() as $row){ 
+                                        $getDonasi = $this->db->select('SUM(`nominal`) as total')
+                                                                ->from('donasi')    
+                                                                ->where([
+                                                                    'idaksi' => $row->id,
+                                                                    'status' => 1
+                                                                ])->get()->row();
+                                ?>
                                     <tr>
                                         <td scope="row" class="text-center"><?= $no++ ?></td>
                                         <td scope="row"><strong><?= $row->judul ?></strong></td>
@@ -69,6 +77,7 @@
                                             }?>
                                             <button class="btn btn-primary btn-sm"  data-toggle="popover"  data-html="true" data-placement="left" data-content="<img height='250px' src='<?= $url ?>'/>"><i class="fas fa-eye"></i></button>
                                         </td>
+                                        <td scope="row">Rp. <strong><?= ($getDonasi->total > 0) ? rupiah($getDonasi->total) : 0 ?></strong></td>
                                         <td scope="row">Rp. <?= rupiah($row->target) ?></td>
                                         <td><?= ($row->due == TRUE) ? longdate_indo($row->due) : '..' ?></td>
                                         <td scope="row" class="text-center">
@@ -94,7 +103,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Tambah Aksi</h5>
                 </div>
-                <form action="<?= site_url('aksi/create') ?>" method="post" enctype="multipart/form-data">
+                <form action="<?= site_url('admin/aksi/create') ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body bg-secondary">
                     <div class="row">
                         <div class="col-lg-12">
