@@ -138,11 +138,8 @@ class Home extends CI_Controller{
             
             $this->db->where('id', $this->input->post('donateid', TRUE));
             $this->db->update('donasi', ['img' => $img['file_name']]);
-
-            redirect('', 'refresh');
-        }else{
-            $this->session->set_flashdata('msg', "Bukti Gagal Di Upload. Silahkan Coba Lagi");
-            redirect($_SERVER['HTTP_REFERER']);
-        }  
+        }
+        
+        redirect('', 'refresh');
     }
 }

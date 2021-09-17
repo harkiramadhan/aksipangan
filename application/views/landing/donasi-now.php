@@ -92,7 +92,9 @@
 								</div>
 								<label class="text-center col colFormLabel col-12 text-black fwSemibold"><span class="d-block mb-1">Instruksi Pembayaran										</span></label>
 								<p class="text-center">Transfer sesuai nominal di bawah ini:</p>
-								<h2><span>Rp</span>&nbsp;<span class=""><?= rupiah($data['nominal']) ?></span></h2>
+								<h2 class="text-center">
+									<span>Rp</span>&nbsp;<span class=""><?= rupiah($data['nominal']) ?></span>
+								</h2>
 								
 								<?php if($data['payment_option'] == 'tf'): ?>
 									<?php foreach($payment_method as $p){ ?>
@@ -104,7 +106,10 @@
 										</div>
 									<?php } ?>
 								<?php elseif($data['payment_option'] == 'qris'): ?>
-
+									<div class="text-center">
+										<p class="text-center"><strong>Bayar Dengan QRIS Sesuai Nominal Di Atas</strong></p>
+										<img alt="bank" src="<?= base_url('assets/img/qris-aksipangan.jpeg') ?>" style="width: 100%; height: auto;">
+									</div>
 								<?php endif; ?>
 								<p class="text-center mb-2">Upload bukti transfer:</p>
 								<form action="<?= site_url('home/uploadBukti') ?>" method="post" enctype='multipart/form-data'>

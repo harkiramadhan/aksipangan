@@ -12,7 +12,7 @@
     <section class="bannerSec bannerSecII d-flex position-relative overflow-hidden">
         <div class="alignCenter w-100 d-flex align-items-center">
             <div class="container pt-15 py-md-10 pt-lgwd-25 pb-lgwd-10">
-                <div class="row align-items-center">
+                <div class="row align-items-center pt-7">
                     <div class="col-12">
                         <div class="captionWrap position-relative">
                             <h1 class="text-white fwSemibold mb-2">
@@ -148,9 +148,8 @@
                                     </div>
                                 </div>
                                 <!-- widget/.widgetShare -->
-                                <div class="widget widgetShare text-center mb-0 py-7 py-md-12">
+                                <!-- <div class="widget widgetShare text-center mb-0 py-7 py-md-12">
                                     <h4 class="h4 fwSemibold mb-5">Share this Post</h4>
-                                    <!-- shareSocialLinks -->
                                     <ul class="list-unstyled shareSocialLinks d-flex flex-wrap justify-content-center fontCabin mb-0 pl-0 text-capitalize">
                                         <li>
                                             <a href="javascript:void(0);" class="sslinks facebook">
@@ -173,7 +172,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> -->
                             </article>
                         </div>
                     </div>

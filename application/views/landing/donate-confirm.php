@@ -118,7 +118,7 @@
 									<div class="form-row">
 										<!-- form-group  -->
 										<div class="form-group col-12">
-											<label class="wdFromLabel d-block">Whatsapp/Telphone<span class="text-danger fsSmall"> *</span></label>
+											<label class="wdFromLabel d-block">Email<span class="text-danger fsSmall"> *</span></label>
 											<input type="email" class="form-control rounded" name="email" required>
 										</div>
 									</div>

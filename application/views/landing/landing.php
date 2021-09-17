@@ -72,16 +72,9 @@
                                 <p class="mb-0 text-justify"><?= $row->deskripsi ?></p>
                             </div>
                             <div class=" px-3 pb-3">
-                                <p><strong>Donasi Sekarang, Melalui :</strong></p>
-                                <div class="btn-group">
-                                    <!-- https://wa.me/628118448335 -->
-                                    <a href="https://forms.gle/zy7bmXjY6gyiCnxA6" target="_blank" class="btn btnPrimary btnMin align-top p-0 border-light position-relative" data-hover="Klik Untuk Donasi">
-                                        <span class="d-block btnText"></i>Form Donasi</span>
-                                    </a>
-                                    <a href="https://api.whatsapp.com/send/?phone=6281290478592&text=Hallo%2C%20%E2%80%A8%0A%0ASaya%20_tulis%20nama%20anda_%2C%0A%E2%80%A8Ingin%20berdonasi%20di%20aksi%20Aksi%201000%20HP%20Untuk%20Anak%20Petani%20dan%20Nelayan.%0A%0A%E2%80%A8%E2%80%A8Senilai%20Rp.%20_tulis%20nominal%20transfer_%E2%80%A8%0A%0ATransfer%20melalui%20rekening%3A%0ABank%20Syariah%20Indonesia%20%28BSI%29%0ANo%20%3A%207168079863%0Aa.n%20%3A%20AKSI%20PANGAN%0A%0A%E2%80%A8Terimakasih" target="_blank" class="btn btnWhite btnMin align-top p-0 border-0 position-relative" data-hover="Melalui Whatsapp">
-                                        <span class="d-block btnText"><i class="fab fa-whatsapp mr-2"></i>Whatsapp</span>
-                                    </a>
-                                </div>
+                                <a href="<?= site_url('aksi/' . $row->id) ?>" target="_blank" class="btn btnPrimary btnMin btn-block align-top p-0 border-light position-relative" data-hover="Klik Untuk Donasi">
+                                    <span class="d-block btnText"></i>Donasi Sekarang</span>
+                                </a>
                             </div>
                         </div>
                     </article>

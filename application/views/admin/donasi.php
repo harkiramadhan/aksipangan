@@ -64,7 +64,7 @@
                                     <td scope="row" class="text-center"><?= $no++ ?></td>
                                     <td scope="row"><strong><?= $row['nama'] ?></strong></td>
                                     <td scope="row">
-                                        <button class="btn btn-primary btn-sm" data-container="body" data-toggle="popover" data-placement="bottom" data-content="<?= $row['judul'] ?>">001<i class="fas fa-info-circle ml-1"></i></button>
+                                        <button class="btn btn-primary btn-sm" data-container="body" data-toggle="popover" data-placement="bottom" data-content="<?= $row['judul'] ?>"><strong><?= str_pad($row['idaksi'], 5, "0", STR_PAD_LEFT) ?></strong><i class="fas fa-info-circle ml-1"></i></button>
                                     </td>
                                     <td scope="row text-center">
                                         <?php if($row['status'] == 0): ?>
@@ -77,7 +77,7 @@
                                         Rp. <strong><?= rupiah($row['nominal']) ?></strong>
                                         <span>- <?= $row['jenis'] ?></span>
                                     </td>
-                                    <td scope="row"><?= date_indo($row['pay_date']) ?></td>
+                                    <td scope="row"><?= date_indo(date('Y-m-d', strtotime($row['created_at']))) ?></td>
                                     <td scope="row" class="text-center">
                                         <div class="btn-group">
                                             <?php if($row['status'] == 0): ?>

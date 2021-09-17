@@ -27,7 +27,15 @@
     <div class="causesGridSection py-10 pt-md-15 pb-md-3 pt-lg-10 pb-lg-5 mb-lg-10 mb-15">
         <div class="container">
             <div class="row cgSecRow">
-                <?php foreach($aksi->result() as $row){ ?>
+                <?php 
+                    foreach($aksi->result() as $row){ 
+                        $getDonasi = $this->db->select('SUM(`nominal`) as total')
+                                                                ->from('donasi')    
+                                                                ->where([
+                                                                    'idaksi' => $row->id,
+                                                                    'status' => 1
+                                                                ])->get()->row();
+                ?>
                 <!-- <?= $row->judul ?> -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <!-- causeGridCol -->
@@ -42,7 +50,7 @@
                                 <div class="row mt-2 px-3 pb-2">
                                     <div class="col">
                                         <span class="text-left text-black"><strong>Terkumpul</strong></span>
-                                        <span class="d-block text-left"><i class="fa fa-wallet mr-1 text-info"></i> Rp. 0</span>
+                                        <span class="d-block text-left"><i class="fa fa-wallet mr-1 text-info"></i> Rp. <strong><?= ($getDonasi->total > 0) ? rupiah($getDonasi->total) : 0 ?></strong></span>
                                     </div>
                                     <div class="col-5">
                                         <span class="text-left text-black"><strong>Sisa Hari</strong></span>
@@ -55,17 +63,11 @@
                                 <h4 class="h4 cgColTitle mb-2 fwSemibold"><a href="<?= site_url('aksi/' . $row->id) ?>"><?= $row->judul ?></a></h4>
                                 <p class="mb-0 text-justify"><?= $row->deskripsi ?></p>
                             </div>
+                            
                             <div class=" px-3 pb-3">
-                                <p><strong>Donasi Sekarang, Melalui :</strong></p>
-                                <div class="btn-group">
-                                    <!-- https://wa.me/628118448335 -->
-                                    <a href="https://forms.gle/zy7bmXjY6gyiCnxA6" target="_blank" class="btn btnPrimary btnMin align-top p-0 border-light position-relative" data-hover="Klik Untuk Donasi">
-                                        <span class="d-block btnText"></i>Form Donasi</span>
-                                    </a>
-                                    <a href="https://api.whatsapp.com/send/?phone=6281290478592&text=Hallo%2C%20%E2%80%A8%0A%0ASaya%20_tulis%20nama%20anda_%2C%0A%E2%80%A8Ingin%20berdonasi%20di%20aksi%20Aksi%201000%20HP%20Untuk%20Anak%20Petani%20dan%20Nelayan.%0A%0A%E2%80%A8%E2%80%A8Senilai%20Rp.%20_tulis%20nominal%20transfer_%E2%80%A8%0A%0ATransfer%20melalui%20rekening%3A%0ABank%20Syariah%20Indonesia%20%28BSI%29%0ANo%20%3A%207168079863%0Aa.n%20%3A%20AKSI%20PANGAN%0A%0A%E2%80%A8Terimakasih" target="_blank" class="btn btnWhite btnMin align-top p-0 border-0 position-relative" data-hover="Melalui Whatsapp">
-                                        <span class="d-block btnText"><i class="fab fa-whatsapp mr-2"></i>Whatsapp</span>
-                                    </a>
-                                </div>
+                                <a href="<?= site_url('aksi/' . $row->id) ?>" target="_blank" class="btn btnPrimary btnMin btn-block align-top p-0 border-light position-relative" data-hover="Klik Untuk Donasi">
+                                    <span class="d-block btnText"></i>Donasi Sekarang</span>
+                                </a>
                             </div>
                         </div>
                     </article>
