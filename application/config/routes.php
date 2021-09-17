@@ -54,7 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['admin'] = 'admin/auth';
-$route['logout'] = 'auth/logout';
+$route['logout'] = 'admin/auth/logout';
 $route['aksi'] = 'home/aksi';
 $route['aksi/(:num)'] = 'home/detailAksi/$1';
 $route['donasi/(:num)'] = 'home/donasiAksi/$1';

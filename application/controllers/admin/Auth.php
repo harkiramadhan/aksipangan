@@ -2,14 +2,15 @@
 class Auth extends CI_Controller{
     function __construct(){
         parent::__construct();
-        $this->load->model('M_User'); 
+        $this->load->model('M_User');
+    }
+
+    function index(){
         
         if($this->session->userdata('role') == 1){
             redirect('admin/dashboard');
         }
-    }
-
-    function index(){
+        
         $this->load->view('login');
     }
 
@@ -35,7 +36,7 @@ class Auth extends CI_Controller{
 
     function logout(){
         $this->session->sess_destroy();
-        $url = base_url();
-        redirect($url);
+        // $url = base_url();
+        redirect('');
     }
 }
